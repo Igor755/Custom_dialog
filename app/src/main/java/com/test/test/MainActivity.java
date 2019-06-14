@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -26,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView depth;
     private TextView amount;
     private TextView note;
+    private TextView title_alert;
     private Context context;
 
     @Override
@@ -60,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
         add_place_marker_dialog.setView(promptsView);
 
 
-
+        title_alert = (TextView) promptsView.findViewById(R.id.title_alert);
         lat = (TextView) promptsView.findViewById(R.id.latitude_alert);
         lon = (TextView) promptsView.findViewById(R.id.longitude_alert);
         title = (TextView) promptsView.findViewById(R.id.title);
@@ -68,6 +70,19 @@ public class MainActivity extends AppCompatActivity {
         depth = (TextView) promptsView.findViewById(R.id.depth);
         amount = (TextView) promptsView.findViewById(R.id.amount);
         note = (TextView) promptsView.findViewById(R.id.note);
+
+        Typeface tf = Typeface.createFromAsset(getAssets(),
+                "15352.ttf");
+
+        title_alert.setTypeface(tf);
+
+      /*  lat.setTypeface(tf);
+        lon.setTypeface(tf);
+        title.setTypeface(tf);
+        date.setTypeface(tf);
+        depth.setTypeface(tf);
+        amount.setTypeface(tf);
+        note.setTypeface(tf);*/
 
 
 
